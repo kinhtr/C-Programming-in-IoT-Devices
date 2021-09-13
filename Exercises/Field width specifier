@@ -1,0 +1,23 @@
+#include <stdio.h>
+#pragma warning(disable : 4996)
+#define SIZE 12
+int main(void) {
+	float total = 0;
+	float income[SIZE];
+	for (int i = 0; i < SIZE; i++) {
+		int gross;
+		printf("Enter the %d income:", i + 1);
+		scanf("%d", &gross);
+		income[i] = gross / 12.5;
+		if (i == 6) {
+			total += income[i] / 12.5 * 1.5;
+		}
+		total += income[i];
+	}
+	for (int i = 0; i < SIZE; i++) {
+		printf("element [%2d] %2s %10.4f\n", i, "=", income[i]);
+		printf("\n");
+	}
+	printf("total   %7s %10.4f\n", "=", total);
+	return 0;
+}
