@@ -6,6 +6,7 @@
 #define SIZE 16
 int main(void) {
 	FILE* write;
+	write = fopen("text13.txt", "w");
 	char* input;
 	do {
 		printf("Enter a string: ");
@@ -24,12 +25,11 @@ int main(void) {
 		}
 
 		if (strcmp(input, ".") != 0) {
-			write = fopen("text13.txt", "w");
-			fprintf(write, "%d:%s", strlen(input), input);
-			fclose(write);
+			fprintf(write, "%d:%s\n", strlen(input), input);
 			free(input);
 		}
 	} while (strcmp(input, ".") != 0);
 	free(input);
+	fclose(write);
 	return 0;
 }
