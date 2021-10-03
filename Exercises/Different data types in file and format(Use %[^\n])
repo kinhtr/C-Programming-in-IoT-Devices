@@ -27,7 +27,7 @@ int main(void) {
 		int invalid = 1;
 		while (invalid) {
 			fgets(buffer, SIZE, read);
-			if (sscanf(buffer, "%[^;];%[^\n]", &myList[i].price, &myList[i].item) == 2) {
+			if (sscanf(buffer, "%[^;];%[^\n]", myList[i].price, myList[i].item) == 2) {
 				invalid = 0;
 			}
 		}
