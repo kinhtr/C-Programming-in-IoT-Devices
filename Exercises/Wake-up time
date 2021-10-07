@@ -59,7 +59,7 @@ int calculateTime(int a, int b, int max, int* overflow) {
     }
     else {
         c = c + *overflow;
-        if (c == H_MAX + 1) {
+        if (c == H_MAX + 1 && max == H_MAX) {
             c = 0;
         }
     }
