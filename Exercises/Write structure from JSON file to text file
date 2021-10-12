@@ -52,7 +52,6 @@ int main(void) {
 		}
 		else if (input == 2) {
 			FILE* append, * read;
-			car temp;
 			printf("Enter the brand of the car: ");
 			fgets(buffer, B_SIZE, stdin);
 			sscanf(buffer, "%[^\n]", extra.brand);
