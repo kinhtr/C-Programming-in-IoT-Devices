@@ -1,0 +1,11 @@
+int digit_counter(unsigned int nr) {
+    int count = 0;
+    while (nr > 0) {
+        nr = nr >> 4;
+        count++;
+    }
+    if (count == 0) {
+        count = 1;
+    }
+    return count;
+}
