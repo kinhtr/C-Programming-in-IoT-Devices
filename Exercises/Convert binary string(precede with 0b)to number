@@ -1,0 +1,27 @@
+bool binary_reader(unsigned int *pu) {
+    char line[100];
+    char *string = line;
+    int offset;
+    *pu = 0;
+    // get rid of possible white space
+    if (read_line(line, 100)) {
+        for (offset = 0; isspace(string[offset]); offset++);
+        string += offset; 
+    }
+    if (string[0] == '0' && string[1] == 'b') {
+        int i = 2;
+        while (string[i] == '0' || string[i] == '1') {
+            *pu = *pu << 1;
+            if (string[i] == '0') {
+                *pu += 0;
+            } else {
+                *pu += 1;
+            }
+            i++;
+        }
+        if (i > 2) {
+            return true;
+        }
+    }
+    return false;
+}
