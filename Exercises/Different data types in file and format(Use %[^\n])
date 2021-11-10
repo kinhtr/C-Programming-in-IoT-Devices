@@ -22,16 +22,12 @@ int main(void) {
 		printf("Failed to open the file");
 		return 1;
 	}
-
+	
 	while (!feof(read)) {
-		int invalid = 1;
-		while (invalid) {
-			fgets(buffer, SIZE, read);
-			if (sscanf(buffer, "%[^;];%[^\n]", myList[i].price, myList[i].item) == 2) {
-				invalid = 0;
-			}
-		}
-		i++;
+		fgets(buffer, SIZE, read);
+		if (sscanf(buffer, "%[^;];%[^\n]", myList[i].price, myList[i].item) == 2) {
+			i++;
+		}	
 	}
 	printf("%-50s", "Name");
 	printf("%10s\n", "Price");
