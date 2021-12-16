@@ -1,3 +1,5 @@
+//Digit counter returns the minimum number of hexadecimal digits that are needed to print the number given as parameter
+
 int digit_counter(unsigned int nr) {
     int count = 0;
     while (nr > 0) {
