@@ -1,3 +1,8 @@
+/*Binary reader takes a pointer to unsigned int as parameter and returns boolean value.
+True means that a binary number was successfully read.
+Call read_line to read strings that are to be converted to unsigned integers.
+Read_line returns true when a line was successfully read and false when the end of input is reached.*/
+
 bool binary_reader(unsigned int *pu) {
     char line[100];
     char *string = line;
@@ -24,4 +29,18 @@ bool binary_reader(unsigned int *pu) {
         }
     }
     return false;
+}
+
+//Digit counter returns the minimum number of hexadecimal digits that are needed to print the number given as parameter
+
+int digit_counter(unsigned int nr) {
+    int count = 0;
+    while (nr > 0) {
+        nr = nr >> 4;
+        count++;
+    }
+    if (count == 0) {
+        count = 1;
+    }
+    return count;
 }
