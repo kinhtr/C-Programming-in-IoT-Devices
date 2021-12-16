@@ -1,3 +1,6 @@
+/*Both source and target are linked lists that are initialized by the caller.
+The end of list is market by setting next pointer of the last element to NULL.*/
+
 int move(student **source, int group, student **target) {
     int count = 0;
     while(*source != NULL) {
